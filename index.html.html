@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mbi Aziseh — Policy Entrepreneur & Civic Tech Innovator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#0a1628;
+  --navy2:#0f2040;
+  --navy3:#162d57;
+  --gold:#c9a84c;
+  --gold2:#e8c97a;
+  --gold3:#f5e4b3;
+  --white:#ffffff;
+  --off:#f7f8fc;
+  --muted:#8896ab;
+  --border:rgba(201,168,76,0.18);
+  --text:#1a2640;
+  --subtext:#4a5a75;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Inter',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,22,40,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--white);font-weight:700;letter-spacing:0.02em}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.85rem;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{background:var(--gold);color:var(--navy);padding:0.5rem 1.25rem;border-radius:4px;font-size:0.8rem;font-weight:600;text-decoration:none;letter-spacing:0.04em;text-transform:uppercase;transition:background 0.2s}
+.nav-cta:hover{background:var(--gold2)}
+
+/* HERO */
+.hero{background:var(--navy);min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:64px}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.05) 1px,transparent 1px);background-size:60px 60px;opacity:0.6}
+.hero-glow{position:absolute;top:-20%;right:-10%;width:600px;height:600px;background:radial-gradient(ellipse,rgba(201,168,76,0.08) 0%,transparent 70%);pointer-events:none}
+.hero-inner{max-width:1200px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:1fr 420px;gap:5rem;align-items:center;position:relative;z-index:1}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.3);color:var(--gold);font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:0.4rem 1rem;border-radius:100px;margin-bottom:1.5rem}
+.hero-eyebrow::before{content:'';width:6px;height:6px;background:var(--gold);border-radius:50%}
+h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,4vw,3.6rem);color:var(--white);line-height:1.12;font-weight:700;margin-bottom:1rem}
+h1 em{color:var(--gold);font-style:normal}
+.hero-roles{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.5rem}
+.role-pill{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.7);font-size:0.75rem;padding:0.3rem 0.75rem;border-radius:100px;font-weight:500}
+.hero-desc{font-size:1rem;color:rgba(255,255,255,0.65);line-height:1.75;margin-bottom:2.5rem;max-width:540px}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{background:var(--gold);color:var(--navy);padding:0.85rem 2rem;border-radius:4px;font-size:0.875rem;font-weight:600;text-decoration:none;letter-spacing:0.02em;transition:all 0.2s;border:none;cursor:pointer}
+.btn-primary:hover{background:var(--gold2);transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--white);padding:0.85rem 2rem;border-radius:4px;font-size:0.875rem;font-weight:500;text-decoration:none;border:1px solid rgba(255,255,255,0.25);transition:all 0.2s}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;padding-top:3rem;border-top:1px solid rgba(255,255,255,0.08)}
+.stat-num{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold);font-weight:700}
+.stat-label{font-size:0.78rem;color:rgba(255,255,255,0.5);margin-top:0.25rem;line-height:1.4}
+
+/* PHOTO CARD */
+.hero-photo-wrap{position:relative}
+.hero-photo-card{border-radius:8px;overflow:hidden;position:relative}
+.hero-photo-card img{width:100%;height:520px;object-fit:cover;object-position:top center;display:block;filter:brightness(0.92) contrast(1.05)}
+.photo-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(10,22,40,0.85));padding:1.5rem}
+.photo-tag{background:var(--gold);color:var(--navy);font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:0.3rem 0.75rem;border-radius:3px;display:inline-block;margin-bottom:0.5rem}
+.photo-name{color:var(--white);font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:600}
+.photo-title{color:rgba(255,255,255,0.65);font-size:0.78rem;margin-top:0.2rem}
+.photo-badge{position:absolute;top:1.5rem;right:-1rem;background:var(--navy2);border:1px solid var(--border);padding:0.75rem 1rem;border-radius:6px;text-align:center}
+.badge-org{font-size:0.7rem;font-weight:700;color:var(--gold);letter-spacing:0.08em;text-transform:uppercase}
+.badge-sub{font-size:0.65rem;color:rgba(255,255,255,0.5);margin-top:0.1rem}
+
+/* SECTIONS */
+section{padding:6rem 0}
+.section-inner{max-width:1200px;margin:0 auto;padding:0 2rem}
+.section-eyebrow{font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:700;color:var(--text);line-height:1.2;margin-bottom:1.25rem}
+.section-desc{font-size:1rem;color:var(--subtext);line-height:1.75;max-width:560px}
+.section-header{margin-bottom:3.5rem}
+
+/* ABOUT */
+.about-bg{background:var(--off)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.about-text p{color:var(--subtext);line-height:1.8;margin-bottom:1.25rem;font-size:0.95rem}
+.about-mission{background:var(--navy);border-radius:8px;padding:2rem;margin-top:2rem}
+.mission-label{font-size:0.7rem;font-weight:700;color:var(--gold);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.5rem}
+.mission-text{color:var(--white);font-family:'Playfair Display',serif;font-size:1.05rem;line-height:1.6;font-style:italic}
+.values-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.value-card{background:var(--white);border:1px solid rgba(0,0,0,0.06);border-radius:6px;padding:1.25rem;transition:border-color 0.2s}
+.value-card:hover{border-color:var(--gold)}
+.value-icon{width:36px;height:36px;background:rgba(201,168,76,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:0.75rem;font-size:1rem}
+.value-title{font-size:0.85rem;font-weight:600;color:var(--text);margin-bottom:0.25rem}
+.value-desc{font-size:0.78rem;color:var(--subtext);line-height:1.5}
+
+/* EXPERTISE */
+.expertise-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+.exp-card{background:var(--off);border:1px solid rgba(0,0,0,0.05);border-radius:8px;padding:1.75rem;transition:all 0.25s;cursor:default;position:relative;overflow:hidden}
+.exp-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transition:transform 0.25s;transform-origin:left}
+.exp-card:hover{box-shadow:0 8px 32px rgba(0,0,0,0.08);transform:translateY(-3px)}
+.exp-card:hover::after{transform:scaleX(1)}
+.exp-icon{font-size:1.6rem;margin-bottom:1rem}
+.exp-title{font-size:0.9rem;font-weight:600;color:var(--text);margin-bottom:0.5rem}
+.exp-desc{font-size:0.78rem;color:var(--subtext);line-height:1.55}
+
+/* ORGANIZATIONS */
+.orgs-bg{background:var(--navy)}
+.org-list{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.org-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:2rem;transition:border-color 0.2s}
+.org-card:hover{border-color:rgba(201,168,76,0.4)}
+.org-name{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--white);font-weight:600;margin-bottom:0.25rem}
+.org-role{font-size:0.75rem;color:var(--gold);font-weight:600;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:0.75rem}
+.org-desc{font-size:0.85rem;color:rgba(255,255,255,0.55);line-height:1.65}
+
+/* PROJECTS */
+.projects-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem}
+.proj-card{background:var(--white);border:1px solid rgba(0,0,0,0.07);border-radius:8px;padding:1.75rem;transition:all 0.25s}
+.proj-card:hover{box-shadow:0 12px 40px rgba(0,0,0,0.1);transform:translateY(-4px)}
+.proj-num{font-family:'Playfair Display',serif;font-size:2.5rem;color:rgba(201,168,76,0.2);font-weight:700;line-height:1;margin-bottom:0.5rem}
+.proj-title{font-size:0.95rem;font-weight:600;color:var(--text);margin-bottom:0.5rem}
+.proj-reach{display:inline-flex;align-items:center;gap:0.3rem;background:rgba(201,168,76,0.1);color:var(--gold);font-size:0.72rem;font-weight:600;padding:0.2rem 0.6rem;border-radius:100px;margin-bottom:0.75rem}
+.proj-desc{font-size:0.82rem;color:var(--subtext);line-height:1.6}
+
+/* SERVICES */
+.services-bg{background:var(--off)}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.svc-card{background:var(--white);border:1px solid rgba(0,0,0,0.06);border-radius:8px;padding:2rem;transition:all 0.25s}
+.svc-card:hover{border-color:var(--gold);box-shadow:0 4px 24px rgba(201,168,76,0.1)}
+.svc-icon-wrap{width:48px;height:48px;background:var(--navy);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:1.3rem}
+.svc-title{font-size:0.95rem;font-weight:600;color:var(--text);margin-bottom:0.5rem}
+.svc-desc{font-size:0.82rem;color:var(--subtext);line-height:1.6}
+
+/* AWARDS */
+.awards-row{display:flex;gap:2rem;flex-wrap:wrap}
+.award-card{flex:1;min-width:220px;background:var(--white);border:1px solid rgba(0,0,0,0.06);border-radius:8px;padding:1.75rem;display:flex;gap:1rem;align-items:flex-start}
+.award-badge{width:48px;height:48px;background:rgba(201,168,76,0.12);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.2rem}
+.award-year{font-size:0.72rem;color:var(--gold);font-weight:700;margin-bottom:0.25rem;letter-spacing:0.06em}
+.award-title{font-size:0.9rem;font-weight:600;color:var(--text);margin-bottom:0.25rem}
+.award-org{font-size:0.78rem;color:var(--subtext)}
+
+/* PUBLICATIONS */
+.pubs-bg{background:var(--navy)}
+.pub-list{display:flex;flex-direction:column;gap:1rem}
+.pub-item{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:1.5rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;transition:border-color 0.2s}
+.pub-item:hover{border-color:rgba(201,168,76,0.4)}
+.pub-tag{font-size:0.68rem;font-weight:700;color:var(--gold);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.35rem}
+.pub-title{font-size:0.95rem;color:var(--white);font-weight:500}
+.pub-link{color:var(--gold);font-size:0.8rem;font-weight:600;text-decoration:none;white-space:nowrap;border:1px solid rgba(201,168,76,0.35);padding:0.4rem 1rem;border-radius:4px;transition:all 0.2s}
+.pub-link:hover{background:rgba(201,168,76,0.1)}
+
+/* CONTACT */
+.contact-bg{background:var(--navy)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.contact-text p{color:rgba(255,255,255,0.6);line-height:1.75;font-size:0.95rem;margin-bottom:1.5rem}
+.contact-available{display:flex;flex-direction:column;gap:0.75rem;margin-top:1.5rem}
+.avail-item{display:flex;align-items:center;gap:0.75rem;color:rgba(255,255,255,0.7);font-size:0.85rem}
+.avail-dot{width:8px;height:8px;background:var(--gold);border-radius:50%;flex-shrink:0}
+.contact-form{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:2.5rem}
+.form-group{margin-bottom:1.25rem}
+.form-label{display:block;font-size:0.78rem;font-weight:600;color:rgba(255,255,255,0.6);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:0.5rem}
+.form-input{width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:5px;padding:0.75rem 1rem;color:var(--white);font-size:0.9rem;font-family:'Inter',sans-serif;outline:none;transition:border-color 0.2s}
+.form-input:focus{border-color:rgba(201,168,76,0.5)}
+.form-input::placeholder{color:rgba(255,255,255,0.3)}
+textarea.form-input{resize:vertical;min-height:120px}
+.form-submit{width:100%;background:var(--gold);color:var(--navy);border:none;padding:0.9rem 2rem;border-radius:5px;font-size:0.9rem;font-weight:700;cursor:pointer;letter-spacing:0.02em;transition:background 0.2s;margin-top:0.5rem}
+.form-submit:hover{background:var(--gold2)}
+.contact-info{display:flex;flex-direction:column;gap:0.75rem;margin-top:2rem}
+.contact-detail{display:flex;align-items:center;gap:0.75rem;color:rgba(255,255,255,0.6);font-size:0.85rem}
+.contact-detail a{color:var(--gold);text-decoration:none}
+.contact-icon{font-size:1rem;color:var(--gold);width:20px;text-align:center}
+
+/* FOOTER */
+footer{background:#060e1a;padding:2rem 0;border-top:1px solid rgba(255,255,255,0.05)}
+.footer-inner{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between}
+.footer-brand{font-family:'Playfair Display',serif;font-size:1rem;color:var(--white)}
+.footer-brand span{color:var(--gold)}
+.footer-copy{font-size:0.78rem;color:rgba(255,255,255,0.3)}
+
+/* GOLD LINE */
+.gold-divider{width:60px;height:3px;background:var(--gold);border-radius:2px;margin-bottom:2rem}
+
+/* STAT STRIP */
+.stat-strip{background:var(--gold);padding:3.5rem 0}
+.strip-inner{max-width:1200px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center}
+.strip-num{font-family:'Playfair Display',serif;font-size:2.5rem;color:var(--navy);font-weight:700}
+.strip-label{font-size:0.78rem;color:rgba(10,22,40,0.65);font-weight:600;letter-spacing:0.04em;margin-top:0.25rem}
+
+/* SCROLL ANIMATION */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* MOBILE */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:2rem}
+  .hero-photo-wrap{display:none}
+  .about-grid,.contact-grid{grid-template-columns:1fr}
+  .expertise-grid{grid-template-columns:1fr 1fr}
+  .org-list,.projects-grid,.services-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .strip-inner{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">Mbi <span>Aziseh</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#expertise">Expertise</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Partner with me</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">Advancing Governance in Africa</div>
+      <h1>Advancing <em>Electoral Integrity,</em> Civic Innovation & Accountable Governance</h1>
+      <div class="hero-roles">
+        <span class="role-pill">Policy Entrepreneur</span>
+        <span class="role-pill">Civic Tech Innovator</span>
+        <span class="role-pill">AI & Governance Strategist</span>
+        <span class="role-pill">Founder, POLITICOS</span>
+      </div>
+      <p class="hero-desc">Designing evidence-driven solutions that strengthen democratic systems, enhance parliamentary accountability, and empower citizens — especially youth — to actively shape governance and public policy.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary">Explore My Work</a>
+        <a href="#contact" class="btn-outline">Partner with Me</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num">1,000+</div>
+          <div class="stat-label">Citizens engaged through civic education & platforms</div>
+        </div>
+        <div>
+          <div class="stat-num">200+</div>
+          <div class="stat-label">Young leaders trained & mentored</div>
+        </div>
+        <div>
+          <div class="stat-num">3</div>
+          <div class="stat-label">Elections observed as certified observer</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <div class="photo-badge">
+        <div class="badge-org">POLITICOS</div>
+        <div class="badge-sub">Policy Lab · Cameroon</div>
+      </div>
+      <div class="hero-photo-card">
+        <img src="/mnt/user-data/uploads/WhatsApp_Image_2026-06-13_at_9_15_26_PM.jpeg" alt="Mbi Aziseh — Policy Entrepreneur and Civic Tech Innovator">
+        <div class="photo-overlay">
+          <span class="photo-tag">Executive Director</span>
+          <div class="photo-name">Mbi Aziseh</div>
+          <div class="photo-title">Policy Lab for Civic Innovation · Cameroon</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STAT STRIP -->
+<div class="stat-strip">
+  <div class="strip-inner">
+    <div>
+      <div class="strip-num">150+</div>
+      <div class="strip-label">Participants in parliamentary simulations</div>
+    </div>
+    <div>
+      <div class="strip-num">50+</div>
+      <div class="strip-label">Professionals trained in AI tools</div>
+    </div>
+    <div>
+      <div class="strip-num">5</div>
+      <div class="strip-label">Policy briefs & legislative debriefs produced</div>
+    </div>
+    <div>
+      <div class="strip-num">500+</div>
+      <div class="strip-label">Citizens reached through voter engagement</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="about-bg">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <div class="section-eyebrow">About</div>
+        <h2 class="section-title">Bridging Citizens, Institutions, and Evidence</h2>
+        <div class="gold-divider"></div>
+        <p>I am a civic innovation leader and policy entrepreneur committed to strengthening democratic governance. My journey began in Cameroon in 2018 with a clear observation: governance systems often operate at a distance from the people they are meant to serve.</p>
+        <p>Across Africa, fewer than 40% of citizens trust parliaments, and nearly 78% of Africans live in countries where governance conditions have worsened. In this context, citizens — especially young people — remain underrepresented in decision-making, despite making up the majority of the population.</p>
+        <p>I operate at the intersection of public policy, civic technology, and governance innovation, translating complex systems into practical tools and platforms that people can understand and influence. What defines my approach is the ability to connect research with action and systems with people.</p>
+        <div class="about-mission">
+          <div class="mission-label">Mission</div>
+          <div class="mission-text">"To strengthen democratic governance by advancing citizen participation, electoral integrity, and evidence-based policymaking, while building systems that promote transparency, accountability, and informed public engagement."</div>
+        </div>
+      </div>
+      <div class="reveal" style="animation-delay:0.1s">
+        <div class="section-eyebrow">Principles</div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--text);margin-bottom:1.5rem;font-weight:600">What Guides My Work</h3>
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon">🎯</div>
+            <div class="value-title">Design for Participation</div>
+            <div class="value-desc">Creating platforms that turn passive audiences into active governance participants</div>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">📊</div>
+            <div class="value-title">Evidence-Driven</div>
+            <div class="value-desc">Translating data and research into actionable policies and programs</div>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">🔍</div>
+            <div class="value-title">Information Integrity</div>
+            <div class="value-desc">Integrating fact-checking and verification into all civic work</div>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">🤝</div>
+            <div class="value-title">Co-Create Solutions</div>
+            <div class="value-desc">Working with communities to ensure relevance, inclusivity, and impact</div>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">💡</div>
+            <div class="value-title">Tech for Empowerment</div>
+            <div class="value-desc">Using AI and digital tools to amplify citizen voices and access</div>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">🌱</div>
+            <div class="value-title">Youth as Leaders Now</div>
+            <div class="value-desc">Equipping young people with tools to influence governance today</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section id="expertise">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">Areas of Expertise</div>
+      <h2 class="section-title">Where I Create Impact</h2>
+      <div class="gold-divider"></div>
+      <p class="section-desc">Eight interconnected domains where I design, lead, and deliver measurable governance and civic innovation solutions.</p>
+    </div>
+    <div class="expertise-grid">
+      <div class="exp-card reveal">
+        <div class="exp-icon">🗳️</div>
+        <div class="exp-title">Elections & Electoral Integrity</div>
+        <div class="exp-desc">Strengthening transparent, inclusive, and credible electoral processes through observation, fact-checking, and civic mobilization.</div>
+      </div>
+      <div class="exp-card reveal">
+        <div class="exp-icon">🏛️</div>
+        <div class="exp-title">Parliamentary Affairs</div>
+        <div class="exp-desc">Advancing people-centered legislative accountability through dialogue platforms, policy briefs, and citizen-parliament engagement.</div>
+      </div>
+      <div class="exp-card reveal">
+        <div class="exp-icon">🌍</div>
+        <div class="exp-title">Decentralization & Local Governance</div>
+        <div class="exp-desc">Guiding institutions in designing reforms that empower local authorities and enhance grassroots democratic participation.</div>
+      </div>
+      <div class="exp-card reveal">
+        <div class="exp-icon">👥</div>
+        <div class="exp-title">Youth & Political Participation</div>
+        <div class="exp-desc">Developing mentorship and capacity-building initiatives that equip young people to actively engage in governance.</div>
+      </div>
+      <div class="exp-card reveal">
+        <div class="exp-icon">📢</div>
+        <div class="exp-title">Civic Engagement & Advocacy</div>
+        <div class="exp-desc">Crafting strategic frameworks and mobilization initiatives that inspire informed citizen participation and collective action.</div>
+      </div>
+      <div class="exp-card reveal">
+        <div class="exp-icon">💻</div>
+        <div class="exp-title">Civic Innovation & Digital Engagement</div>
+        <div class="exp-desc">Transforming how citizens interact with governance systems through technology and innovative civic platforms.</div>
+      </div>
+      <div class="exp-card reveal">
+        <div class="exp-icon">🤖</div>
+        <div class="exp-title">AI for Development</div>
+        <div class="exp-desc">Applying artificial intelligence to enhance research, civic education, and productivity for governance practitioners.</div>
+      </div>
+      <div class="exp-card reveal">
+        <div class="exp-icon">✅</div>
+        <div class="exp-title">Fact-Checking & Information Integrity</div>
+        <div class="exp-desc">Designing initiatives that combat misinformation and disinformation in governance processes and public discourse.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORGANIZATIONS -->
+<section style="background:var(--navy);padding:6rem 0">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-eyebrow" style="color:var(--gold)">Organizations & Experience</div>
+      <h2 class="section-title" style="color:var(--white)">Institutions I've Built & Served</h2>
+      <div class="gold-divider"></div>
+    </div>
+    <div class="org-list">
+      <div class="org-card reveal">
+        <div class="org-role">Founder & Executive Director</div>
+        <div class="org-name">POLITICOS — Policy Lab for Civic Innovation</div>
+        <div class="org-desc">Founded as a civic problem-solving platform to address structural challenges within democratic governance. Evolved from a civic blog into a full policy lab engaged in research, public dialogue, civic education, and institutional engagement. Engaged 1,000+ citizens through civic programs and initiatives.</div>
+      </div>
+      <div class="org-card reveal">
+        <div class="org-role">Consultant</div>
+        <div class="org-name">Friedrich-Ebert-Stiftung (FES) Cameroon</div>
+        <div class="org-desc">Contributed to initiatives focused on peacebuilding and inclusive political participation. Supported the Women's Convention and the Together Cameroon project, focused on voter registration and civic sensitization across Cameroon.</div>
+      </div>
+      <div class="org-card reveal">
+        <div class="org-role">Head of Early Warning & Counter-Narratives</div>
+        <div class="org-name">DefyHateNow — CivicWatch</div>
+        <div class="org-desc">Leading efforts in early warning, counter-narratives, and media literacy to strengthen information integrity and conflict prevention. Supporting fact-based communication and responsible information ecosystems in fragile contexts.</div>
+      </div>
+      <div class="org-card reveal">
+        <div class="org-role">Award Coordinator</div>
+        <div class="org-name">The Duke of Edinburgh's International Award Foundation</div>
+        <div class="org-desc">Overseeing program delivery in Cameroon for one of the world's leading youth development frameworks, operating in 130+ countries. Helping young people develop leadership, resilience, and community service skills.</div>
+      </div>
+      <div class="org-card reveal">
+        <div class="org-role">Communal President</div>
+        <div class="org-name">Cameroon National Youth Council — Santa Subdivision</div>
+        <div class="org-desc">Elected to represent 5,000+ young people in the Santa Subdivision. Led advocacy campaigns, promoted civic education, and advanced youth participation in decision-making processes.</div>
+      </div>
+      <div class="org-card reveal">
+        <div class="org-role">President</div>
+        <div class="org-name">JCI Yaoundé Universities — Junior Chamber International</div>
+        <div class="org-desc">Led initiatives focused on leadership development, civic engagement, and community impact as part of a global network of young active citizens across 120+ countries.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">Projects & Initiatives</div>
+      <h2 class="section-title">Platforms I've Built for Impact</h2>
+      <div class="gold-divider"></div>
+      <p class="section-desc">Citizen-centered initiatives designed to make governance more accessible, participatory, and accountable.</p>
+    </div>
+    <div class="projects-grid">
+      <div class="proj-card reveal">
+        <div class="proj-num">01</div>
+        <div class="proj-reach">150+ participants</div>
+        <div class="proj-title">The People's Parliament</div>
+        <div class="proj-desc">A structured space where citizens engage in parliamentary simulations, policy debates, and dialogue with governance issues — bridging the gap between citizens and legislative systems.</div>
+      </div>
+      <div class="proj-card reveal">
+        <div class="proj-num">02</div>
+        <div class="proj-reach">100+ citizens</div>
+        <div class="proj-title">A Day with the Mayor</div>
+        <div class="proj-desc">Direct exposure for community members to how municipal governance works. Participants engage local decision-making processes, demystifying local governance and building institutional trust.</div>
+      </div>
+      <div class="proj-card reveal">
+        <div class="proj-num">03</div>
+        <div class="proj-reach">200+ students</div>
+        <div class="proj-title">Civic & Democracy Hub</div>
+        <div class="proj-desc">School and university clubs providing platforms for debates, leadership training, and community engagement — equipping students with knowledge and skills for active democratic participation.</div>
+      </div>
+      <div class="proj-card reveal">
+        <div class="proj-num">04</div>
+        <div class="proj-reach">500+ citizens</div>
+        <div class="proj-title">Your Vote Counts</div>
+        <div class="proj-desc">A grassroots civic education and voter engagement campaign combining workshops, digital outreach, and peer-to-peer engagement to address voter apathy and increase civic participation.</div>
+      </div>
+      <div class="proj-card reveal">
+        <div class="proj-num">05</div>
+        <div class="proj-reach">100+ youth</div>
+        <div class="proj-title">Youth Engagement in Decentralization</div>
+        <div class="proj-desc">Dialogue platforms and capacity-building sessions equipping young people to understand and influence local decision-making in Cameroon's decentralization processes.</div>
+      </div>
+      <div class="proj-card reveal">
+        <div class="proj-num">06</div>
+        <div class="proj-reach">Research fellows</div>
+        <div class="proj-title">The Sentry Fellowship</div>
+        <div class="proj-desc">Building capacity of emerging leaders in governance, accountability, and policy research. Fellows produce research outputs and policy briefs contributing to informed public discourse.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services-bg">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">Services</div>
+      <h2 class="section-title">How I Can Help You</h2>
+      <div class="gold-divider"></div>
+      <p class="section-desc">Practical, evidence-driven solutions tailored to real-world governance and civic engagement challenges.</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card reveal">
+        <div class="svc-icon-wrap">📋</div>
+        <div class="svc-title">Policy Research & Advisory</div>
+        <div class="svc-desc">Rigorous policy research, analysis, and strategic advisory that translates complex data into practical recommendations to strengthen governance and drive measurable impact.</div>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-icon-wrap">🏘️</div>
+        <div class="svc-title">Civic Engagement Program Design</div>
+        <div class="svc-desc">Participatory programs that actively engage citizens — from civic platforms and community dialogues to scalable engagement initiatives that increase participation and accountability.</div>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-icon-wrap">⚖️</div>
+        <div class="svc-title">Governance & Accountability Consulting</div>
+        <div class="svc-desc">Supporting institutions to design systems and strategies that make governance more responsive, accountable, transparent, and results-driven.</div>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-icon-wrap">🗳️</div>
+        <div class="svc-title">Elections & Parliamentary Advisory</div>
+        <div class="svc-desc">Expertise to enhance electoral integrity, strengthen voter engagement, improve parliamentary accountability, and conduct electoral observation and monitoring.</div>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-icon-wrap">🔍</div>
+        <div class="svc-title">Fact-Checking & Information Integrity</div>
+        <div class="svc-desc">Fact-checking systems, verification strategies, and civic education initiatives that protect the integrity of your work and promote accurate public discourse.</div>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-icon-wrap">🤖</div>
+        <div class="svc-title">AI Training for Development</div>
+        <div class="svc-desc">Hands-on training helping individuals and teams use AI tools for research, content, and program delivery — making AI practical and immediately applicable.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section style="padding:6rem 0">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">Awards & Recognition</div>
+      <h2 class="section-title">Recognized for Leadership & Impact</h2>
+      <div class="gold-divider"></div>
+    </div>
+    <div class="awards-row">
+      <div class="award-card reveal">
+        <div class="award-badge">🏆</div>
+        <div>
+          <div class="award-year">2022</div>
+          <div class="award-title">Best Youth Council President</div>
+          <div class="award-org">Recognized for outstanding leadership and commitment to youth empowerment</div>
+        </div>
+      </div>
+      <div class="award-card reveal">
+        <div class="award-badge">🥇</div>
+        <div>
+          <div class="award-year">2021</div>
+          <div class="award-title">Duke of Edinburgh Gold Award</div>
+          <div class="award-org">Awarded for excellence in personal development, service, and leadership</div>
+        </div>
+      </div>
+      <div class="award-card reveal">
+        <div class="award-badge">⭐</div>
+        <div>
+          <div class="award-year">2020</div>
+          <div class="award-title">Best Chapter President — JCI Cameroon</div>
+          <div class="award-org">Honored for exemplary leadership and impact in youth-led community initiatives</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications" class="pubs-bg" style="padding:6rem 0">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-eyebrow" style="color:var(--gold)">Publications & Media</div>
+      <h2 class="section-title" style="color:var(--white)">Contributing to the Policy Conversation</h2>
+      <div class="gold-divider"></div>
+      <p class="section-desc" style="color:rgba(255,255,255,0.55)">Research, articles, and public analysis translating complex governance issues into clear, actionable insights.</p>
+    </div>
+    <div class="pub-list">
+      <div class="pub-item reveal">
+        <div>
+          <div class="pub-tag">Article · 237Check</div>
+          <div class="pub-title">The Role of Social Media in Promoting Transnationalism of Cameroon's Culture</div>
+        </div>
+        <a href="https://237check.org/2024/12/17/the-role-of-social-media-in-promoting-transnationalism-of-cameroons-culture/" class="pub-link" target="_blank">Read →</a>
+      </div>
+      <div class="pub-item reveal">
+        <div>
+          <div class="pub-tag">Article · 237Check</div>
+          <div class="pub-title">Comic Trends in Cameroon: A Catalyst for Social Cohesion</div>
+        </div>
+        <a href="https://237check.org/2024/12/04/comic-trends-a-catalyst-for-social-cohesion-in-cameroon/" class="pub-link" target="_blank">Read →</a>
+      </div>
+      <div class="pub-item reveal">
+        <div>
+          <div class="pub-tag">Media Feature · Duke of Edinburgh Foundation</div>
+          <div class="pub-title">Featured Story — Supporting Youth Development through the Award Program in Cameroon</div>
+        </div>
+        <a href="https://www.linkedin.com/posts/internationalaward_mbi-aziseh-award-story-activity-7333046295865008128-L6C5" class="pub-link" target="_blank">View →</a>
+      </div>
+      <div class="pub-item reveal">
+        <div>
+          <div class="pub-tag">Book · Upcoming Launch July 7, 2026</div>
+          <div class="pub-title">Born for This: Discovering and Living Your Purpose — Book Launch at Friedrich Ebert Foundation, Bamenda</div>
+        </div>
+        <a href="#contact" class="pub-link">Pre-order →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-bg" style="padding:6rem 0">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="section-eyebrow" style="color:var(--gold)">Get in Touch</div>
+        <h2 class="section-title" style="color:var(--white)">Let's Build Stronger Democratic Systems Together</h2>
+        <div class="gold-divider"></div>
+        <div class="contact-text">
+          <p>If you are looking to collaborate on initiatives that strengthen governance, empower citizens, or drive policy impact, I am open to working with institutions, organizations, and global partners.</p>
+        </div>
+        <div class="contact-available">
+          <div class="avail-item"><span class="avail-dot"></span>Global fellowships and leadership programs</div>
+          <div class="avail-item"><span class="avail-dot"></span>Strategic partnerships and collaborations</div>
+          <div class="avail-item"><span class="avail-dot"></span>Research and policy engagements</div>
+          <div class="avail-item"><span class="avail-dot"></span>Consulting and advisory engagements</div>
+          <div class="avail-item"><span class="avail-dot"></span>Speaking and training opportunities</div>
+          <div class="avail-item"><span class="avail-dot"></span>Funding opportunities for civic innovation</div>
+        </div>
+        <div class="contact-info">
+          <div class="contact-detail"><span class="contact-icon">✉</span><a href="mailto:mbi.aziseh@politicoss.org">mbi.aziseh@politicoss.org</a></div>
+          <div class="contact-detail"><span class="contact-icon">✉</span><a href="mailto:mbiaziseh@gmail.com">mbiaziseh@gmail.com</a></div>
+          <div class="contact-detail"><span class="contact-icon">📞</span>+237 683 362 966</div>
+          <div class="contact-detail"><span class="contact-icon">📍</span>Bamenda, Northwest Region, Cameroon</div>
+        </div>
+      </div>
+      <div class="contact-form reveal">
+        <div style="font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--white);font-weight:600;margin-bottom:1.75rem">Send a Message</div>
+        <div class="form-group">
+          <label class="form-label">Full Name</label>
+          <input type="text" class="form-input" placeholder="Your full name">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Organization</label>
+          <input type="text" class="form-input" placeholder="Your organization">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input type="email" class="form-input" placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Subject</label>
+          <select class="form-input" style="cursor:pointer">
+            <option value="" style="background:#1a2a45">Select a topic</option>
+            <option style="background:#1a2a45">Consulting & Advisory</option>
+            <option style="background:#1a2a45">Partnership & Collaboration</option>
+            <option style="background:#1a2a45">Speaking Engagement</option>
+            <option style="background:#1a2a45">Fellowship / Program</option>
+            <option style="background:#1a2a45">Research Collaboration</option>
+            <option style="background:#1a2a45">Funding Opportunity</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message</label>
+          <textarea class="form-input" placeholder="Describe how you'd like to work together..."></textarea>
+        </div>
+        <button class="form-submit" onclick="handleSubmit(this)">Send Message</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">Mbi <span>Aziseh</span> · POLITICOS</div>
+    <div class="footer-copy">© 2026 · Policy Lab for Civic Innovation and Community Solutions · Bamenda, Cameroon</div>
+  </div>
+</footer>
+
+<script>
+function handleSubmit(btn){
+  btn.textContent='Message Sent ✓';
+  btn.style.background='#2a6a3a';
+  btn.style.color='#fff';
+  setTimeout(()=>{btn.textContent='Send Message';btn.style.background='';btn.style.color='';},3000);
+}
+
+const reveals=document.querySelectorAll('.reveal');
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
+},{threshold:0.1});
+reveals.forEach(r=>io.observe(r));
+
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}
+  });
+});
+</script>
+</body>
+</html>
